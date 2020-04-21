@@ -12,13 +12,14 @@
     <entity name="Route" representedClassName="Route" syncable="YES" codeGenerationType="class">
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="grade" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="location" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="photo" optional="YES" attributeType="Binary"/>
         <attribute name="type" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="ProfileData" positionX="-3971.0546875" positionY="-2233.6328125" width="162.859375" height="73"/>
         <element name="Location" positionX="-3942" positionY="-2205" width="128" height="28"/>
-        <element name="Route" positionX="-3933" positionY="-2178" width="128" height="118"/>
+        <element name="ProfileData" positionX="-3971.0546875" positionY="-2233.6328125" width="162.859375" height="73"/>
+        <element name="Route" positionX="-3933" positionY="-2178" width="128" height="133"/>
     </elements>
 </model>

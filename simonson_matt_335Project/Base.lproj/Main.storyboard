@@ -67,6 +67,10 @@
                     <navigationItem key="navigationItem" id="jpn-aZ-Zik">
                         <barButtonItem key="backBarButtonItem" title="My Profile" id="jSc-Fh-dPs"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="profileName" destination="xq8-QZ-Qbp" id="0RV-jg-r63"/>
+                        <outlet property="profilePhoto" destination="aQn-yO-qWv" id="cBQ-kh-7Od"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -269,7 +273,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bmX-sy-GxT"/>
+        <segue reference="Drw-kp-TWP"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="info.circle" catalog="system" width="128" height="121"/>

@@ -10,6 +10,8 @@ import UIKit
 
 class HomePageViewController: UIViewController {
     
+    @IBOutlet weak var profilePhoto: UIImageView!
+    @IBOutlet weak var profileName: UILabel!
     
     
     override func viewDidLoad() {
