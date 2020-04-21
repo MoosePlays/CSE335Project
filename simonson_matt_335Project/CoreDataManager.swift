@@ -63,10 +63,10 @@ class CoreDataManager {
     
     func setProfileData(name: String, photo: NSData) -> NSManagedObject{
         //create container and set destination
-        var profile = fetchProfile()
+        let profile = fetchProfile()
         if profile == []{ // create new profile
             //create container and set destination
-            let entity = NSEntityDescription.entity(forEntityName: "Profile", in: context)
+            let entity = NSEntityDescription.entity(forEntityName: "ProfileData", in: context)
             let newProfile = NSManagedObject(entity: entity!, insertInto: context)
             
             //set values
@@ -84,7 +84,7 @@ class CoreDataManager {
             
         } else { // edit existing profile
             //get profile as NSManagedObject
-            var editedProfile: NSManagedObject = profile[0]
+            let editedProfile: NSManagedObject = profile[0]
             
             //set new values
             editedProfile.setValue(name, forKey: "name")
@@ -138,7 +138,7 @@ class CoreDataManager {
     func fetchProfile() -> [NSManagedObject]{
         //create array and set fetch request info
         var locations: [NSManagedObject] = []
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Profile")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "ProfileData")
         
         //fetch data
         do{

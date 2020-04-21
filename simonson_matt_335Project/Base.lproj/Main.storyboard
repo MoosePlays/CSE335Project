@@ -66,6 +66,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="jpn-aZ-Zik">
                         <barButtonItem key="backBarButtonItem" title="My Profile" id="jSc-Fh-dPs"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="4Sv-Vd-wGa">
+                            <connections>
+                                <action selector="editButton:" destination="BYZ-38-t0r" id="kWo-WW-DrW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="profileName" destination="xq8-QZ-Qbp" id="0RV-jg-r63"/>
