@@ -6,6 +6,8 @@
 //  Copyright © 2020 mjsimons. All rights reserved.
 //
 
+// PROGRESS NOT IMPLEMENTED FOR NOW, BUTTON NOT CLICKABLE
+
 import UIKit
 
 class HomePageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -31,7 +33,19 @@ class HomePageViewController: UIViewController, UIImagePickerControllerDelegate,
         
         //edit photo
         editAlert.addAction(UIAlertAction(title: "Photo", style: .default, handler: {action in
-            self.newImage()
+            let photoAlert = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
+            
+            photoAlert.addAction(UIAlertAction(title: "Camera", style: .default, handler: {action in
+                self.camera()
+            }))
+            
+            photoAlert.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: {action in
+                self.photoLibrary()
+            }))
+            
+            photoAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            self.present(photoAlert, animated: true)
         }))
         
         //edit name
@@ -60,8 +74,18 @@ class HomePageViewController: UIViewController, UIImagePickerControllerDelegate,
         self.present(editAlert, animated: true)
     }
     
-    //MARK: - Photo Library Stuff
-    func newImage(){
+    //MARK: - Photo Stuff
+    func camera(){
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera
+            imagePicker.allowsEditing = false
+            
+            present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func photoLibrary(){
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
             imagePicker.delegate = self
             imagePicker.sourceType = .photoLibrary
@@ -81,5 +105,6 @@ class HomePageViewController: UIViewController, UIImagePickerControllerDelegate,
             
         })
     }
+        
 }
 

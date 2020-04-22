@@ -17,6 +17,8 @@
 		F32186652447CA5200BF60C2 /* LocationListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32186642447CA5200BF60C2 /* LocationListController.swift */; };
 		F3A280542449057B008DC9F3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A280532449057B008DC9F3 /* CoreDataManager.swift */; };
 		F3A280562449121B008DC9F3 /* GymController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A280552449121B008DC9F3 /* GymController.swift */; };
+		F3D798D0244FC28C0037BFE8 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D798CF244FC28C0037BFE8 /* LocationTableViewCell.swift */; };
+		F3D798D2244FD35F0037BFE8 /* RouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D798D1244FD35F0037BFE8 /* RouteTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		F32186642447CA5200BF60C2 /* LocationListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListController.swift; sourceTree = "<group>"; };
 		F3A280532449057B008DC9F3 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		F3A280552449121B008DC9F3 /* GymController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymController.swift; sourceTree = "<group>"; };
+		F3D798CF244FC28C0037BFE8 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		F3D798D1244FD35F0037BFE8 /* RouteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				F32186512447C00F00BF60C2 /* HomePageViewController.swift */,
 				F32186642447CA5200BF60C2 /* LocationListController.swift */,
 				F3A280552449121B008DC9F3 /* GymController.swift */,
+				F3D798D1244FD35F0037BFE8 /* RouteTableViewCell.swift */,
+				F3D798CF244FC28C0037BFE8 /* LocationTableViewCell.swift */,
 				F32186532447C00F00BF60C2 /* Main.storyboard */,
 				F3A280532449057B008DC9F3 /* CoreDataManager.swift */,
 				F32186592447C01200BF60C2 /* Assets.xcassets */,
@@ -151,7 +157,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3A280542449057B008DC9F3 /* CoreDataManager.swift in Sources */,
+				F3D798D2244FD35F0037BFE8 /* RouteTableViewCell.swift in Sources */,
 				F3A280562449121B008DC9F3 /* GymController.swift in Sources */,
+				F3D798D0244FC28C0037BFE8 /* LocationTableViewCell.swift in Sources */,
 				F32186522447C00F00BF60C2 /* HomePageViewController.swift in Sources */,
 				F32186582447C00F00BF60C2 /* simonson_matt_335Project.xcdatamodeld in Sources */,
 				F321864E2447C00F00BF60C2 /* AppDelegate.swift in Sources */,

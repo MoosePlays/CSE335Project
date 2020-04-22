@@ -28,32 +28,38 @@ class CoreDataManager {
         
         //set values
         newLocation.setValue(name, forKey: "name")
+        newLocation.setValue(0, forKey: "lat")
+        newLocation.setValue(0, forKey: "long")
         
         //save data
         do {
             try context.save()
+            print("saved location")
         } catch {
             print("something wrong in adding location")
         }
         
         return newLocation
     }
+
     
-    func addRoute(name: String, type: Bool, grade: Int16, desc: String, photo: NSData) -> NSManagedObject{
+    func addRoute(name: String, grade: String, location: String) -> NSManagedObject{
         //create container and set destination
         let entity = NSEntityDescription.entity(forEntityName: "Route", in: context)
         let newRoute = NSManagedObject(entity: entity!, insertInto: context)
         
         //set values
         newRoute.setValue(name, forKey: "name")
-        newRoute.setValue(type, forKey: "type") // BOOL data, false = bouldering, true = rope (toprope and lead combined for now)
+        //newRoute.setValue(type, forKey: "type") // BOOL data, false = bouldering, true = rope (toprope and lead combined for now)
         newRoute.setValue(grade, forKey: "grade")
-        newRoute.setValue(desc, forKey: "desc")
-        newRoute.setValue(photo, forKey: "photo") // UIImage(data:imageData,scale:1.0) and image.pngData() for convert
+        //newRoute.setValue(desc, forKey: "desc")
+        //newRoute.setValue(photo, forKey: "photo") // UIImage(data:imageData,scale:1.0) and image.pngData() for convert
+        newRoute.setValue(location, forKey: "location")
         
         //save data
         do {
             try context.save()
+            print("saved route")
         } catch {
             print("somethings wrong in adding route")
         }
@@ -110,12 +116,29 @@ class CoreDataManager {
         //fetch data
         do{
             locations = try context.fetch(fetchRequest)
+            print("fetched locations")
         } catch let error as NSError{
             print("Couldn't fetch: \(error)")
         }
         
         //return array of fetched data
         return locations
+    }
+    
+    func fetchLocation(name: String) -> NSManagedObject{
+        //same deal as locations, adding predicate here
+        var locations: [NSManagedObject] = []
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Location")
+        fetchRequest.predicate = NSPredicate(format: "name == %@", name)
+        
+        //fetch data
+        do{
+            locations = try context.fetch(fetchRequest)
+        } catch let error as NSError{
+            print("couldnt find: \(name)")
+        }
+        
+        return locations[0]
     }
     
     func fetchRoutes(location: String) -> [NSManagedObject]{
